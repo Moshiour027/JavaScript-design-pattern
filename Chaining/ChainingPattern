@@ -67,6 +67,9 @@ new Clac(0)
 
     this does not give error but returns nothing...
 
-
+Recap:
+    Return the object you want to chain
+    -> The this object
+    ->Capture the  this object if
 
 

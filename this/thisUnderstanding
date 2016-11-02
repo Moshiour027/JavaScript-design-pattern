@@ -1,0 +1,62 @@
+var person = {
+    "firstName": "Moshiour",
+    "lastName": "Rahman",
+    "getFullName": function () {
+        return "Not Implemented Yet";
+    }
+};
+
+var fullName = person.getFullName();
+console.log(fullName);
+-----------------------------------------------------------------------------
+var person = {
+    "firstName": "Moshiour",
+    "lastName": "Rahman",
+    "getFullName": function () {
+        return person.firstName + " " + person.lastName;
+    }
+};
+
+var fullName = person.getFullName();
+console.log(fullName);
+-------question raised??
+1. I am accessing person but i am doing this inside the initializing block of person??
+        --No this works fine
+        --coz
+        return line 16
+        executed after this fullName is executed..
+        --so short the line 16 is being executed when the  person.getFullName() is called meaning in line 20 when assining the value into the
+        variable...
+
+        so this is not the problem with this code it will work completely fine..
+
+
+        if
+        person={};
+
+        then the 12--18 object is gone
+
+        if var person2=person;
+         person={};
+
+         if now since all the variables are pointer so
+         person2.getFullName();
+
+         this case person---
+         person2 is getting person.firstName which  is undefined.
+
+--------------------------------------------------------------------------
+so-------------------------------------------------
+
+
+var person = {
+    "firstName": "Moshiour",
+    "lastName": "Rahman",
+    "getFullName": function () {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+var fullName = person.getFullName();
+console.log(fullName);
+-------------------------------------------------------------------
