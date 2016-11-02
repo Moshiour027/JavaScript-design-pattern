@@ -1,0 +1,72 @@
+1. Useful for creating fluent API for working against a mutable object
+2. Designed around returning the source object.
+3. Popularized by JQuery.
+    Common from a .NET perspective in LINQ
+
+
+jQuery('.foo')
+    .addClass('bar')
+    .fadeIn('slow')
+    .html('Hello World');
+
+new Clac(0)
+    .add(1)
+    .add(2)
+    .multiply(3)
+    .equals(function(result){
+        console.log(result); //logs 9
+    });
+
+
+
+    var Clac = function (start) {
+        this.add = function (x) {
+
+        };
+
+        this.multiply = function (x) {
+
+        };
+        this.equals = function (callback) {
+        };
+    };
+
+    new Clac(0)
+        .add(1)
+        .add(1)
+        .multiply(3)
+        .equals(function (result) {
+            console.log(result);
+        });
+
+        this will cause error cause this will return undefined ...
+        coz the second add method expected something will be returned and
+        which was not the case so the error occurs.
+
+var Clac = function (start) {
+    this.add = function (x) {
+        return this;
+    };
+
+    this.multiply = function (x) {
+        return this;
+    };
+    this.equals = function (callback) {
+        return this;
+    };
+};
+
+new Clac(0)
+    .add(1)
+    .add(1)
+    .multiply(3)
+    .equals(function (result) {
+        console.log(result);
+    });
+
+
+    this does not give error but returns nothing...
+
+
+
+
